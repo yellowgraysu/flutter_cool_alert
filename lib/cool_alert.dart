@@ -3,6 +3,7 @@ library cool_alert;
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:pointer_interceptor/pointer_interceptor.dart';
 
 import 'src/models/cool_alert_options.dart';
 import 'src/utils/animate.dart';
@@ -127,8 +128,10 @@ class CoolAlert {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(borderRadius),
       ),
-      content: CoolAlertContainer(
-        options: options,
+      content: PointerInterceptor(
+        child: CoolAlertContainer(
+          options: options,
+        ),
       ),
     );
 
